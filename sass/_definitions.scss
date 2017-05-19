@@ -1,0 +1,111 @@
+@import "compass";
+@import "compass/reset";
+
+$title-font: 'Oswald', 'Roboto Condensed', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$body-font:'Source Sans Pro','Helvetica Neue', 'Lato', Helvetica, sans-serif;
+
+$primary-color: #3498DB;
+$secondary-color:#E74C3C;
+$dark-primary:#2C3E50;
+$darker-primary:#1C2833;
+$soft-grey:#999999;
+$hard-grey:#555555;
+$light-grey: #EEEEEE;
+$dark-grey: #333333;
+
+@mixin vendorStyle($style,$property) {
+	-moz-#{$style}: #{$property};
+	-webkit-#{$style}: #{$property};
+	-ms-#{$style}: #{$property};
+	#{$style}: #{$property};
+}
+@mixin vendorProp($style,$property) {
+	#{$style}: -moz-#{$property};
+	#{$style}: -webkit-#{$property};
+	#{$style}: -ms-#{$property};
+	#{$style}: #{$property};
+}
+
+$img-path: "../images";
+
+$leading: 1.5em;
+$spacing: 2em;
+$gutter: 1em;
+
+body {
+	max-width:100%;
+	font-size:15px;
+	line-height:1.5;
+	overflow-x:hidden;
+	color:$dark-primary;
+	font-family:$body-font;
+}
+body, html {
+	height:100%;
+}
+.modal {
+	background:rgba(black, 0.75);
+	width:100%;	height:100%;
+	display:none; z-index:100;
+	position:fixed; left:0; top:0;
+}
+.fullwidth {
+	width:100%;
+	height:auto;
+}
+.threefourth {
+	width:60%;
+	height:auto;
+	margin:auto; display:block;
+}
+h1, h2, h3, h4, h5 {
+	font-weight:bold;
+	font-family:$title-font;
+	margin:0 0 1em 0;
+}
+h1 { font-size:2.625em;}
+h2 { font-size:2em;}
+h3 { font-size:1.5em;}
+h4 { font-size:1.3125em;}
+h5 { font-size:1em;}
+.clearfix {
+	@include clearfix;
+}
+.ib {
+	display:inline-block;
+	vertical-align: middle;
+}
+.fleft {
+	float:left;
+}
+.fright {
+	float:right;
+}
+.pageBlocks {
+	position:relative;
+	p {
+		margin-bottom:1em;
+	}
+}
+button {
+	border:0; border-radius:5px;
+	line-height:1; padding:8px;
+	font-family:$title-font; cursor:pointer;
+}
+input, select {
+	line-height:1; padding:7px;
+	font-family:$title-font;
+	border-width:1px; border-style:solid; border-color:#DDD #EEE #EEE #DDD;
+}
+.bb {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+}
+a {
+	outline: 0;
+	&:visited {
+		color: inherit;
+	}
+}
